@@ -1,0 +1,242 @@
+@import "general";
+
+body {
+  font-family: "Poppins", Arial;
+  background-color: $Background;
+}
+
+header {
+  width: 1400px;
+  height: 100vh;
+  padding: 20px 0;
+  margin: 0 auto;
+  border-radius: 20px;
+  gap: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "nav nav nav nav"
+    "info_header info_header img_header img_header"
+    "info_header info_header img_header img_header"
+    "footer footer footer footer";
+}
+
+nav {
+  grid-area: nav;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    width: 400px;
+
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: $WhiteColor;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+          color: $SecondaryColor;
+        }
+      }
+    }
+  }
+
+  .Logo {
+    width: 500px;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+    }
+
+    h1 {
+      font-family: "Abril Fatface", serif;
+      font-weight: 600;
+      font-size: 2.7em;
+      font-style: italic;
+      color: $WhiteColor;
+      cursor: pointer;
+
+      span {
+        color: $SecondaryColor;
+        font-weight: 800;
+      }
+    }
+  }
+
+  .Info {
+    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    a {
+      text-decoration: none;
+
+      i {
+        font-size: 24px;
+        margin-right: 18px;
+        color: $WhiteColor;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+          color: $SecondaryColor;
+        }
+      }
+    }
+  }
+}
+
+.Info-search {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-right: 40px;
+
+  input {
+    width: 170px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 300;
+    background-color: $GreyColor;
+    border: none;
+    color: $WhiteColor;
+    border-radius: 15px;
+    padding: 8px;
+    margin-right: -30px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-input-placeholder {
+      font-weight: 300;
+      color: rgba(204, 204, 204, 0.2);
+    }
+  }
+
+  button {
+    border: none;
+    background-color: $GreyColor;
+    margin-top: 4px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    i {
+      font-size: 20px;
+      transition: all ease-in-out 0.2s;
+      color: $WhiteColor;
+
+      &:hover {
+        color: $SecondaryColor;
+      }
+    }
+  }
+}
+
+section {
+  height: 670px;
+  border-radius: 30px;
+}
+
+.Section1 {
+  grid-area: info_header;
+  background-color: $PrimaryColor;
+  color: $WhiteColor;
+  padding: 80px 70px;
+
+  h1 {
+    font-family: fantasy;
+    font-size: 4.2em;
+    font-weight: 500;
+    margin: 18px 0;
+  }
+
+  h2 {
+    font-family: "Trebuchet MS", Arial;
+    font-size: 2.2em;
+  }
+
+  p {
+    font-family: "Arial", Helvetica;
+    font-size: 0.9em;
+    margin-right: 50px;
+  }
+
+  button {
+    font-weight: 600;
+    font-family: "Poppins", Arial;
+    padding: 12px 20px;
+    border-radius: 40px;
+    border: none;
+    margin-top: 40px;
+
+    color: $Background;
+    background-color: $SecondaryColor;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      cursor: pointer;
+      background-color: darken($SecondaryColor, 10%);
+    }
+  }
+
+  &-location {
+    display: flex;
+    align-items: center;
+    margin-top: 90px;
+    gap: 15px;
+    font-size: 1.1em;
+
+    span {
+      font-weight: 600;
+    }
+  }
+}
+
+.Section2 {
+  grid-area: img_header;
+  background-image: url(/img/Backpack.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+footer {
+  grid-area: footer;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 150px;
+  border-radius: 30px;
+  background-color: $GreyColor;
+
+  .Services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    i {
+      font-size: 52px;
+      color: $WhiteColor;
+    }
+
+    p {
+      color: $WhiteColor;
+      font-size: 0.8em;
+    }
+  }
+}

@@ -1,0 +1,391 @@
+@import "general";
+
+body {
+  width: 1300px;
+  margin: 0 auto;
+}
+
+header {
+  height: 100vh;
+  padding: 25px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "Content1 Content2";
+  gap: 20px;
+}
+
+.Content1 {
+  grid-area: Content1;
+  //   border: 2px solid $SecondaryColor;
+  //   border-radius: 20px;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 20px;
+
+    .Logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+
+        span {
+          color: $PrimaryColor;
+          text-transform: uppercase;
+          font-weight: 800;
+        }
+      }
+
+      i {
+        font-size: 1.4rem;
+        color: $ThirdColor;
+      }
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 25px;
+
+      li {
+        a {
+          font-size: 1rem;
+          text-decoration: none;
+          color: $SecondaryColor;
+        }
+      }
+
+      button {
+        font-size: inherit;
+        font-weight: 600;
+        padding: 8px 12px;
+        border-radius: 14px;
+        border: 1px solid #000000;
+        background: transparent;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .Tittle {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+
+    &-h1 {
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 600;
+      margin: 5px 0;
+      text-transform: uppercase;
+      color: $PrimaryColor;
+    }
+
+    p {
+      color: $SecondaryColor;
+      width: 155px;
+      margin-right: 18px;
+    }
+
+    .Icons {
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+
+      figure {
+        img {
+          width: 45px;
+          margin-left: -15px;
+        }
+
+        h3 {
+          padding: 8px 10px;
+          border-radius: 30px;
+          background-color: $ThirdColor;
+          color: $WhiteColor;
+          margin-left: -16px;
+        }
+      }
+    }
+  }
+
+  &-button {
+    display: flex;
+    align-items: center;
+    padding: 8px 30px;
+    margin-top: 40px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 300;
+    border-radius: 30px;
+    color: $WhiteColor;
+    background-color: $PrimaryColor;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: darken($PrimaryColor, 10%);
+    }
+
+    i {
+      display: flex;
+      text-align: center;
+      padding: 7px;
+      font-size: 1.2rem;
+      border-radius: 50%;
+      margin-right: -6px;
+    }
+  }
+
+  footer {
+    display: flex;
+    margin-top: 150px;
+    gap: 20px;
+
+    .Info {
+      position: relative;
+      display: flex;
+      background: url(/MajorArt/img/AI.png) center center;
+      background-size: contain;
+      border-radius: 15px;
+      padding: 10px;
+      width: 300px;
+      height: 200px;
+
+      &-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 14px;
+        width: 35%;
+      }
+
+      &-item {
+        background-color: $WhiteColor;
+        border-radius: 10px;
+        padding: 8px;
+
+        h3 {
+          font-size: 0.9rem;
+          font-weight: 800;
+          color: $PrimaryColor;
+        }
+
+        p {
+          font-size: 0.8rem;
+          font-weight: normal;
+        }
+      }
+
+      &-p {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 10px;
+        border-radius: 5px;
+        border-bottom-right-radius: 13px;
+        color: $WhiteColor;
+        background-color: #ffffff70;
+        backdrop-filter: blur(10px);
+
+        span {
+          font-weight: 300;
+          letter-spacing: 1.1px;
+        }
+      }
+
+      button {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        padding: 8px;
+        border-radius: 16px;
+        background-color: $PrimaryColor;
+        border: 5px solid $WhiteColor;
+        cursor: pointer;
+
+        i {
+          display: flex;
+          align-items: center;
+          font-size: 1.2rem;
+          color: $WhiteColor;
+        }
+      }
+    }
+
+    .Social {
+      display: flex;
+      flex-direction: column-reverse;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      gap: 10px;
+
+      button {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border: 2px solid $PrimaryColor;
+        font-size: 1.3rem;
+        border-radius: 30px;
+        width: 40px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-color: rgba($PrimaryColor, 0.4);
+        }
+      }
+    }
+
+    .Down {
+      position: relative;
+      display: flex;
+      width: 25%;
+
+      svg {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 70px;
+        overflow: visible;
+      }
+
+      path {
+        fill: none;
+      }
+
+      text {
+        fill: #b4a078;
+      }
+
+      @keyframes circular-text-rotate {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      button {
+        position: absolute;
+        bottom: 5px;
+        right: 14px;
+        font-size: 2rem;
+        padding: 15px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.Content2 {
+  grid-area: Content2;
+  position: relative;
+  background: url(/MajorArt/img/AI.png) no-repeat center center;
+  background-size: cover;
+  border-radius: 30px;
+
+  nav {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 30px;
+
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 10px;
+
+      li {
+        a {
+          font-family: "Poppins";
+          font-weight: 500;
+          font-size: 1rem;
+          padding: 6px 12px;
+          border: 2px solid $WhiteColor;
+          border-radius: 14px;
+          text-decoration: none;
+          color: $SecondaryColor;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            background-color: rgba($PrimaryColor, 0.4);
+          }
+        }
+      }
+
+      .Content2-isColor {
+        display: flex;
+        align-items: center;
+
+        i {
+          display: flex;
+          text-align: center;
+          padding: 7px;
+          font-size: 1.2rem;
+          border-radius: 50%;
+          margin-right: -6px;
+          color: $WhiteColor;
+          background-color: $PrimaryColor;
+        }
+
+        a {
+          border: none;
+          background-color: $PrimaryColor;
+          color: $WhiteColor;
+
+          &:hover {
+            background-color: $PrimaryColor;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    top: 740px;
+    margin: 30px;
+
+    .Row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      button {
+        width: 50px;
+        height: 50px;
+        border: none;
+        background-color: transparent;
+        color: $WhiteColor;
+        cursor: pointer;
+        font-size: 2.5rem;
+      }
+    }
+
+    p {
+      font-size: 1.6rem;
+      padding: 5px 10px;
+      color: $WhiteColor;
+      background-color: #ffffff40;
+      border-radius: 14px;
+      backdrop-filter: blur(10px);
+    }
+  }
+}
